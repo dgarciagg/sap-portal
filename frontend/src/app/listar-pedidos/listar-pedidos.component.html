@@ -1,0 +1,32 @@
+<div class="contenedor">
+  <h2>📦 Últimos Pedidos de Venta</h2>
+
+  <button class="recargar" (click)="obtenerPedidos()">🔄 Recargar</button>
+
+  <div *ngIf="cargando">Cargando pedidos...</div>
+
+  <table *ngIf="!cargando && pedidos.length > 0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Cliente</th>
+        <th>Fecha</th>
+        <th>Moneda</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pedido of pedidos">
+        <td>{{ pedido.DocEntry }}</td>
+        <td>{{ pedido.CardCode }}</td>
+        <td>{{ pedido.DocDate }}</td>
+        <td>{{ pedido.DocCurrency }}</td>
+        <td>{{ pedido.DocTotal | number:'1.2-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!cargando && pedidos.length === 0">
+    No se encontraron pedidos.
+  </div>
+</div>

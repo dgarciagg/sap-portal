@@ -1,0 +1,36 @@
+.contenedor {
+  margin: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #00296b; /* Azul Analdex */
+}
+
+.recargar {
+  background-color: #ffc107; /* Amarillo Analdex */
+  color: #00296b;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f4f4f4;
+}
+
+th {
+  background-color: #00296b; /* Azul */
+  color: white;
+  padding: 0.5rem;
+}
+
+td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}

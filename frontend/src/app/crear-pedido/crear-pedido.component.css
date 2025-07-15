@@ -1,0 +1,101 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-top: 6px solid #0033A0; /* Azul Analdex */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  color: #0033A0;
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.h2 {
+  color: #0033A0;
+}
+
+label {
+  font-weight: 600;
+
+}
+
+form fieldset {
+  margin-bottom: 25px;
+  border: 2px solid #FFD100;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #F4F4F4;
+}
+
+form legend {
+  font-weight: bold;
+  color: #0033A0;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #0033A0;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.linea {
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #FFD100;
+  margin-top: 15px;
+  border-radius: 6px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 18px;
+  font-size: 14px;
+  background-color: #0033A0;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #001f5c;
+}
+
+button[type="button"] {
+  background-color: #EF3340;
+}
+
+button[type="button"]:hover {
+  background-color: #c0202b;
+}
+button i {
+  margin-right: 6px;
+}

@@ -1,0 +1,31 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: #0033a0; /* Azul Analdex */
+}
+
+.menu button {
+  background-color: #ffc20e; /* Amarillo Analdex */
+  color: #0033a0;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu button:hover {
+  background-color: #d71920; /* Rojo Analdex */
+  color: #fff;
+}
+
+.menu .activo {
+  box-shadow: 0 0 0 3px #fff inset;
+}
+
+.contenido {
+  padding: 30px;
+}

@@ -1,0 +1,101 @@
+<div class="container mt-4">
+
+  <!-- LOGO -->
+  <div class="text-center mb-4">
+    <img src="assets/logo.png" alt="Analdex" height="80">
+  </div>
+
+  <h2 class="text-primary text-center mb-4">Crear Pedido de Venta</h2>
+
+  <form (ngSubmit)="enviarPedido()" #pedidoForm="ngForm" class="border p-4 rounded shadow">
+
+    <div class="form-group mb-3">
+      <label for="CardCode">Cliente (CardCode)</label>
+      <input type="text" id="CardCode" class="form-control" [(ngModel)]="pedido.CardCode" name="CardCode" required>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="DocDate">Fecha del documento</label>
+        <input type="date" id="DocDate" class="form-control" [(ngModel)]="pedido.DocDate" name="DocDate" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="DocDueDate">Fecha de vencimiento</label>
+        <input type="date" id="DocDueDate" class="form-control" [(ngModel)]="pedido.DocDueDate" name="DocDueDate" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="TaxDate">Fecha de impuestos</label>
+        <input type="date" id="TaxDate" class="form-control" [(ngModel)]="pedido.TaxDate" name="TaxDate" required>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="DocCurrency">Moneda</label>
+      <input type="text" id="DocCurrency" class="form-control" [(ngModel)]="pedido.DocCurrency" name="DocCurrency" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="SalesPersonCode">Código del vendedor</label>
+      <input type="number" id="SalesPersonCode" class="form-control" [(ngModel)]="pedido.SalesPersonCode" name="SalesPersonCode">
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="NumAtCard">Referencia externa</label>
+      <input type="text" id="NumAtCard" class="form-control" [(ngModel)]="pedido.NumAtCard" name="NumAtCard">
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="Comments">Comentarios</label>
+      <textarea id="Comments" class="form-control" [(ngModel)]="pedido.Comments" name="Comments" rows="2"></textarea>
+    </div>
+
+    <h4 class="text-danger mb-3">Líneas del pedido</h4>
+
+    <div *ngFor="let linea of pedido.DocumentLines; let i = index" class="border border-warning p-3 mb-3 rounded bg-light">
+      <div class="row mb-2">
+        <div class="col-md-3">
+          <label>ItemCode</label>
+          <input class="form-control" [(ngModel)]="linea.ItemCode" name="ItemCode{{i}}" required>
+        </div>
+        <div class="col-md-2">
+          <label>Cantidad</label>
+          <input type="number" class="form-control" [(ngModel)]="linea.Quantity" name="Quantity{{i}}" required>
+        </div>
+        <div class="col-md-2">
+          <label>Precio</label>
+          <input type="number" class="form-control" [(ngModel)]="linea.UnitPrice" name="UnitPrice{{i}}" required>
+        </div>
+        <div class="col-md-2">
+          <label>Bodega</label>
+          <input class="form-control" [(ngModel)]="linea.WarehouseCode" name="WarehouseCode{{i}}" required>
+        </div>
+        <div class="col-md-3">
+          <label>Impuesto</label>
+          <input class="form-control" [(ngModel)]="linea.TaxCode" name="TaxCode{{i}}">
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-9">
+          <label>Texto libre</label>
+          <input class="form-control" [(ngModel)]="linea.FreeText" name="FreeText{{i}}">
+        </div>
+        <div class="col-md-3">
+          <label>Descuento %</label>
+          <div class="input-group">
+            <input type="number" class="form-control" [(ngModel)]="linea.DiscountPercent" name="DiscountPercent{{i}}">
+            <button class="btn btn-danger" type="button" (click)="eliminarLinea(i)" [disabled]="pedido.DocumentLines.length === 1">
+              🗑 Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <button class="btn btn-warning text-dark" type="button" (click)="agregarLinea()">➕ Agregar línea</button>
+      <button class="btn btn-primary" type="submit">📤 Enviar Pedido</button>
+    </div>
+
+  </form>
+</div>
